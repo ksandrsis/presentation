@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Regular Expressions</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/blood.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h3>Regular Expressions</h3>
+				<pre><code>/.*/</code></pre>
+			</section>
+			<section>
+				<section>
+					<h4>What are Regular Expressions?</h4>
+					<p class="hljs-bullet">
+						A regular expression is a pattern that is matched against a subject string from left to right. The word
+						“Regular
+						expression” is a mouthful, you will usually find the term abbreviated as “regex” or “regexp”. Regular
+						expression
+						is used for replacing a text within a string, validating form, extract a substring from a string based
+						upon
+						a
+						pattern match, and so much more.
+					</p>
+				</section>
+				<section>
+					<h4>Validate Username</h4>
+					<pre><code class="hljs-regexp">^[a-z0-9_-]{3,15}$</code></pre>
+					<img src="assets/introducrion-1.png" alt="">
+				</section>
+				<section>
+					<h4>As a result</h4>
+					<img src="assets/introducrion-2.png" alt="">
+				</section>
+				<section>
+					<h4>Change regexp</h4>
+					<img src="assets/introducrion-3.png" alt="">
+					<p class="fragment">Or</p>
+					<img class="fragment" src="assets/introducrion-2.1.png" alt="">
+				</section>
+			</section>
+			<section>
+				<h4>How to look at a regular expression</h4>
+				<p class="hljs-bullet">
+					Let's figure out how we will look at regular expressions, so that every sign in a regular expression matters,
+					let's look at how we will read this regular expression.</p>
+				<pre><code>Hello</code></pre>
+				<p class="hljs-bullet">Upper case <b class="hljs-link"> H </b> followed by lowercase<b class="hljs-link"> e </b>
+					followed by
+					lowercase <b class="hljs-link"> l
+					</b>followed by
+					lowercase <b class="hljs-link"> l </b>followed by lowercase <b class="hljs-link"> o </b> </p>
+				<p class='fragment'><span class="fragment highlight-red">Just remember.</span></p>
+			</section>
+			<section>
+				<h4>
+					Different programming languages ​​use regular expressions a little differently, in this presentation we will
+					consider the most basic examples that will work well in JavaScript</h4>
+			</section>
+			<section>
+				<section>
+					<h5>Introduction in Meta characters</h5>
+					<p class="hljs-name">Single Charapters</p>
+					<ul>
+						<li class='fragment'><b class="hljs-regexp">\d </b> 0-9</li>
+						<li class='fragment'><b class="hljs-regexp">\w </b> A-Za-z0-9</li>
+						<li class='fragment'><b class="hljs-regexp">\s </b> any whitespace</li>
+						<li class='fragment'><b class="hljs-regexp">. </b>any charapter<b class="hljs-regexp"> \. </b> literal dot
+						</li>
+						<li class='fragment'><b class="hljs-regexp">\W </b> not a A-Za-z0-9</li>
+						<li class='fragment'><b class="hljs-regexp">\S </b> not a whitespace</li>
+					</ul>
+				</section>
+				<section>
+					<p class="hljs-name">Some simple examples</p>
+					<img class='fragment' src="assets/Single_1.png" alt="">
+				</section>
+				<section>
+					<p class="hljs-name">More examples</p>
+					<img class='fragment' src="assets/Single_2.png" alt="">
+				</section>
+				<section>
+					<img src="assets/Single_3.png" alt="">
+					<img class='fragment' src="assets/Single_3-1.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<p class="hljs-name">Quantifiers</p>
+					<ul>
+						<li class='fragment'><b class="hljs-regexp">* </b> 0 or more</li>
+						<li class='fragment'><b class="hljs-regexp">+ </b> 1 or more</li>
+						<li class='fragment'><b class="hljs-regexp">? </b> 0 or 1</li>
+						<li class='fragment'><b class="hljs-regexp">{min,max} </b> numbers</li>
+						<li class='fragment'><b class="hljs-regexp">{n} </b> number</li>
+					</ul>
+				</section>
+				<section>
+					<p class="hljs-name">Some examples</p>
+					<img class='fragment' src="assets/quantifiers_1.png" alt="">
+				</section>
+				<section>
+					<p>Some good example , whith word <code class="hljs-string">color</code></p>
+					<img class='fragment' src="assets/quantifiers_4.png" alt="">
+				</section>
+				<section>
+					<img class='fragment' src="assets/quantifiers_4-1.png" alt="">
+					<img class='fragment' src="assets/quantifiers_4-2.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<p class="hljs-name">Position</p>
+					<ul>
+						<li class='fragment'><b class="hljs-regexp ">^ </b> begining of the line</li>
+						<li class='fragment'><b class="hljs-regexp ">$ </b> end of the line</li>
+						<li class='fragment'><b class="hljs-regexp ">\b </b> word boungary</li>
+					</ul>
+				</section>
+				<section>
+					<p>Lest match all words whats we need to</p>
+					<img class="fragment" src="assets/position_1.png" alt="">
+					<img class="fragment" src="assets/position_2.png" alt="">
+					<img class="fragment" src="assets/position_3.png" alt="">
+					<img class="fragment" src="assets/position_4.png" alt="">
+				</section>
+				<section>
+					<p>Now we finally can match
+						<code class="hljs-string">{n}</code> letters words</p>
+					<img class="fragment" src="assets/position_5.png" alt="">
+				</section>
+			</section>
+			<section>
+				<section>
+					<p class="hljs-name"> Chatacter classes and Alternation</p>
+					<ul>
+						<li class='fragment'><b class="hljs-regexp ">[] </b> Chatacter classe</li>
+						<li class='fragment'><b class="hljs-regexp ">(|) </b> Alternation</li>
+					</ul>
+				</section>
+				<section>
+					<p>For example</p>
+					<pre class="hljs-regexp">[abc]</pre>
+					<img class='fragment' height="150px" src="assets/Character_classes_1.png" alt="">
+					<pre class="hljs-regexp">(com|net|ru|by)</pre>
+					<img class='fragment ' src="assets/Character_classes_2.png" alt="">
+				</section>
+				<section>
+					<p class="hljs-name">Important to know</p>
+					<p><span class="hljs-regexp"> . </span>or <span class="hljs-regexp"> * </span> or another Meta Charapters like
+						this
+						inside <span class="hljs-regexp"> [.*] </span> are turning to literal Charapters </p>
+					<img class='fragment ' src="assets/Character_classes_3.png" alt="">
+				</section>
+				<section>
+					<p class="hljs-name">Important to know_2</p>
+					<p><span class="hljs-regexp"> - </span> inside <span class="hljs-regexp"> [-] </span> are turning to literal
+						Charapters but!
+						if you see something like <span class="hljs-regexp"> [a-z] </span></p>
+					<img class='fragment ' src="assets/Character_classes_11.png" alt="">
+					<img class='fragment ' src="assets/Character_classes_12.png" alt="">
+					<p>And also <span class="hljs-regexp"> ^ </span> in the <span class="hljs-regexp"> [^12345] </span>
+						which mean NOT 12345 <img class='fragment ' src="assets/Character_classes_13.png" alt=""></p>
+				</section>
+				<section>
+					<p class="hljs-name">Example which consist all this parts</p>
+					<img class='fragment ' src="assets/Character_classes_10.png" alt="">
+					<p class="hljs-string fragment"><span class="hljs-regexp"> \w </span> or <span class="hljs-regexp"> . </span>
+						or <span class="hljs-regexp"> _ </span> different type of <span class="hljs-name"> or </span>, <span
+							class="hljs-regexp"> com </span>
+						or <span class="hljs-regexp"> ru </span> or <span class="hljs-regexp"> by </span> </p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<p class="hljs-name"> Regex Caption groups</p>
+					<img src="assets/Caption_group_0.png" alt="">
+					<p><span class="hljs-regexp"> () </span> Can be used differently </p>
+					<p>group №1 = <span class="hljs-name"> $1 </span>group №2 = <span class="hljs-name"> $2 </span> and so on </p>
+				</section>
+				<section>
+					<p> If we need to use (replace, change, etc) <span class="hljs-name"> some part </span> of match
+						we need to use a caption group </p>
+					<p class="hljs-string fragment"> For example <span class="fragment"> we have some<span class="hljs-name">
+								private </span>telephone numbers</span></p>
+
+				</section>
+				<section>
+					<img height="200px" src="assets/Caption_group_1.png" alt="">
+					<p class="hljs-string fragment"> lets add caption group $1 and $2</p>
+					<img height="200px" class="fragment" src="assets/Caption_group_2.png" alt="">
+					<p class="hljs-string fragment"> And hide some infomation</p>
+				</section>
+				<section>
+					<img height="600px" src="assets/Caption_group_2.5.png" alt="">
+				</section>
+				<section>
+					<p class="hljs-string"> More interested examle , lets converts links <span class="hljs-keyword"> MD </span>
+						format
+						to <span class="hljs-name"> HTML </span></p>
+				</section>
+				<section>
+					<img height="600px" src="assets/Caption_group_4.png" alt="">
+				</section>
+				<section>
+					<p class="hljs-string">Lastly, remember that you can refer to this group inside regular expression, by writing
+						<span class="hljs-regexp">\</span> + № of group , if you want to find exactly the same match </p>
+					<img class="fragment" src="assets/Caption_group_5-5.png" alt="">
+				</section>
+			</section>
+			<section>
+				<h3>The end</h3>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true
+				}
+			]
+		});
+	</script>
+</body>
+
+</html>
